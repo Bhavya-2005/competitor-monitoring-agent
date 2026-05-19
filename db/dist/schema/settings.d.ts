@@ -1,0 +1,123 @@
+import { z } from "zod/v4";
+export declare const settingsTable: import("drizzle-orm/pg-core").PgTableWithColumns<{
+    name: "settings";
+    schema: undefined;
+    columns: {
+        id: import("drizzle-orm/pg-core").PgColumn<{
+            name: "id";
+            tableName: "settings";
+            dataType: "number";
+            columnType: "PgSerial";
+            data: number;
+            driverParam: number;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: true;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            identity: undefined;
+            generated: undefined;
+        }, {}, {}>;
+        slackWebhookUrl: import("drizzle-orm/pg-core").PgColumn<{
+            name: "slack_webhook_url";
+            tableName: "settings";
+            dataType: "string";
+            columnType: "PgText";
+            data: string;
+            driverParam: string;
+            notNull: false;
+            hasDefault: false;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+            identity: undefined;
+            generated: undefined;
+        }, {}, {}>;
+        digestSchedule: import("drizzle-orm/pg-core").PgColumn<{
+            name: "digest_schedule";
+            tableName: "settings";
+            dataType: "string";
+            columnType: "PgText";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+            identity: undefined;
+            generated: undefined;
+        }, {}, {}>;
+        digestTime: import("drizzle-orm/pg-core").PgColumn<{
+            name: "digest_time";
+            tableName: "settings";
+            dataType: "string";
+            columnType: "PgText";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+            identity: undefined;
+            generated: undefined;
+        }, {}, {}>;
+        isDigestEnabled: import("drizzle-orm/pg-core").PgColumn<{
+            name: "is_digest_enabled";
+            tableName: "settings";
+            dataType: "boolean";
+            columnType: "PgBoolean";
+            data: boolean;
+            driverParam: boolean;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: undefined;
+            baseColumn: never;
+            identity: undefined;
+            generated: undefined;
+        }, {}, {}>;
+        timezone: import("drizzle-orm/pg-core").PgColumn<{
+            name: "timezone";
+            tableName: "settings";
+            dataType: "string";
+            columnType: "PgText";
+            data: string;
+            driverParam: string;
+            notNull: true;
+            hasDefault: true;
+            isPrimaryKey: false;
+            isAutoincrement: false;
+            hasRuntimeDefault: false;
+            enumValues: [string, ...string[]];
+            baseColumn: never;
+            identity: undefined;
+            generated: undefined;
+        }, {}, {}>;
+    };
+    dialect: "pg";
+}>;
+export declare const insertSettingsSchema: z.ZodObject<{
+    slackWebhookUrl: z.ZodOptional<z.ZodNullable<z.ZodString>>;
+    digestSchedule: z.ZodOptional<z.ZodString>;
+    digestTime: z.ZodOptional<z.ZodString>;
+    isDigestEnabled: z.ZodOptional<z.ZodBoolean>;
+    timezone: z.ZodOptional<z.ZodString>;
+}, {
+    out: {};
+    in: {};
+}>;
+export type InsertSettings = z.infer<typeof insertSettingsSchema>;
+export type Settings = typeof settingsTable.$inferSelect;
+//# sourceMappingURL=settings.d.ts.map
